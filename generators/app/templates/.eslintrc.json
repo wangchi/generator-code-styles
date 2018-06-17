@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": [
+    "xo",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "curly": ["error", "multi-line"],
+    "prettier/prettier": "error",
+    "no-case-declarations": "error"
+  },
+  "env": {
+    "node": true
+  },
+  "overrides": []
+}
