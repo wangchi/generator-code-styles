@@ -3,7 +3,25 @@ const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
   prompting() {
-    const prompts = [];
+    const prompts = [
+      {
+        type: 'list',
+        name: 'features',
+        message: 'What more would you like?',
+        choices: [
+          {
+            name: 'React',
+            value: 'react',
+            checked: true
+          },
+          {
+            name: 'Vue',
+            value: 'vue',
+            checked: false
+          }
+        ]
+      }
+    ];
 
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
@@ -20,16 +38,28 @@ module.exports = class extends Generator {
       this.templatePath('.eslintignore'),
       this.destinationPath('.eslintignore')
     );
-    this.fs.copy(
-      this.templatePath('.eslintrc.json'),
-      this.destinationPath('.eslintrc.json')
-    );
+
+    if (this.props.features === 'react') {
+      this.fs.copy(
+        this.templatePath('.eslintrc_react.json'),
+        this.destinationPath('.eslintrc.json')
+      );
+    } else if (this.props.features === 'vue') {
+      this.fs.copy(
+        this.templatePath('.eslintrc_vue.json'),
+        this.destinationPath('.eslintrc.json')
+      );
+    } else {
+      this.fs.copy(
+        this.templatePath('.eslintrc_react.json'),
+        this.destinationPath('.eslintrc.json')
+      );
+    }
   }
 
   end() {
     this.installDependencies({
       skipInstall: true,
-      npm: false,
       bower: false
     });
   }

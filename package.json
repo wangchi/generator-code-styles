@@ -1,6 +1,6 @@
 {
   "name": "generator-code-styles",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "Generate code styles files in your project",
   "homepage": "https://github.com/wangchi/generator-code-styles.git",
   "author": {
