@@ -1,12 +1,12 @@
 {
   "name": "generator-code-styles",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Generate code styles files in your project",
   "homepage": "https://github.com/wangchi/generator-code-styles.git",
   "author": {
     "name": "Wang Chi",
     "email": "hiwangchi@gmail.com",
-    "url": ""
+    "url": "https://www.pushstack.com"
   },
   "files": [
     "generators"

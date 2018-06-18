@@ -12,7 +12,10 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.copy(this.templatePath('.editorconfig'), this.destinationPath('.eslintrc'));
+    this.fs.copy(
+      this.templatePath('.editorconfig'),
+      this.destinationPath('.editorconfig')
+    );
     this.fs.copy(
       this.templatePath('.eslintignore'),
       this.destinationPath('.eslintignore')
@@ -25,7 +28,8 @@ module.exports = class extends Generator {
 
   end() {
     this.installDependencies({
-      skipInstall: this.options['skip-install'],
+      skipInstall: true,
+      npm: false,
       bower: false
     });
   }
