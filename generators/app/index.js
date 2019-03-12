@@ -18,6 +18,11 @@ module.exports = class extends Generator {
             name: 'Vue',
             value: 'vue',
             checked: false
+          },
+          {
+            name: 'TypeScript',
+            value: 'typescript',
+            checked: false
           }
         ]
       }
@@ -34,10 +39,13 @@ module.exports = class extends Generator {
       this.templatePath('.editorconfig'),
       this.destinationPath('.editorconfig')
     );
-    this.fs.copy(
-      this.templatePath('.eslintignore'),
-      this.destinationPath('.eslintignore')
-    );
+
+    if (['react', 'vue'].indexOf(this.props.features) !== -1) {
+      this.fs.copy(
+        this.templatePath('.eslintignore'),
+        this.destinationPath('.eslintignore')
+      );
+    }
 
     if (this.props.features === 'react') {
       this.fs.copy(
@@ -49,6 +57,11 @@ module.exports = class extends Generator {
         this.templatePath('.eslintrc_vue.json'),
         this.destinationPath('.eslintrc.json')
       );
+    } else if (this.props.features === 'typescript') {
+      this.fs.copy(
+        this.templatePath('tslint.json'),
+        this.destinationPath('tslint.json')
+      );
     } else {
       this.fs.copy(
         this.templatePath('.eslintrc_react.json'),
@@ -57,9 +70,8 @@ module.exports = class extends Generator {
     }
   }
 
-  end() {
+  install() {
     this.installDependencies({
-      skipInstall: true,
       bower: false
     });
   }

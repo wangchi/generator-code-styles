@@ -1,34 +1,36 @@
 {
   "name": "generator-code-styles",
-  "version": "0.0.8",
-  "description": "Generate code styles files in your project",
+  "version": "0.0.11",
+  "description": "Generate code styles files in your React, Vue or TypeScript project",
   "homepage": "https://github.com/wangchi/generator-code-styles.git",
   "author": {
     "name": "Wang Chi",
     "email": "hiwangchi@gmail.com",
-    "url": "https://www.pushstack.com"
+    "url": "https://walker.im"
   },
   "files": [
     "generators"
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "generator react",
+    "generator vue",
+    "generator eslint",
+    "generator tslint",
     "yeoman-generator"
   ],
   "devDependencies": {
-    "yeoman-test": "^1.7.0",
-    "yeoman-assert": "^3.1.0",
     "coveralls": "^3.0.0",
-    "nsp": "^2.8.0",
     "eslint": "^4.19.1",
-    "prettier": "^1.11.1",
-    "husky": "^0.14.3",
-    "lint-staged": "^6.1.1",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
     "eslint-config-xo": "^0.20.1",
-    "jest": "^22.0.6"
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "^24.4.0",
+    "lint-staged": "^6.1.1",
+    "prettier": "^1.11.1",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -42,9 +44,7 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "prepublishOnly": "nsp check",
     "pretest": "eslint .",
-    "precommit": "lint-staged",
     "test": "jest"
   },
   "lint-staged": {

@@ -1,0 +1,17 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+      "tslint-config-standard"
+  ],
+  "jsRules": {},
+  "rules": {
+      "no-console": false,
+      "space-before-function-paren": [true, {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }],
+      "semicolon": [true, "always"]
+  },
+  "rulesDirectory": []
+}

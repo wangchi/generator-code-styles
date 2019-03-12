@@ -1,5 +1,5 @@
 # generator-code-styles [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Generate code styles files in your project
+> Generate code styles files in your React, Vue or TypeScript project
 
 ## Installation
 
@@ -14,6 +14,26 @@ Then generate files in your existing project:
 
 ```bash
 yo code-styles
+```
+
+## Install Lint Packages
+
+In Vue.js Project
+
+```bash
+npm i eslint eslint-plugin-vue --save-dev
+```
+
+In React.js Project
+
+```bash
+npm i eslint eslint-plugin-react --save-dev
+```
+
+In TypeScript Project
+
+```bash
+npm i tslint tslint-config-standard --save-dev
 ```
 
 ## Getting To Know Yeoman
